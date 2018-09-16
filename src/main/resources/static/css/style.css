@@ -1,0 +1,163 @@
+@charset "ISO-8859-1";
+/* CSS Document */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+
+body {
+	background-color: #C0C0C0;
+	color: #000;
+	
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	-webkit-appearance: none;
+}
+
+/* ---------- LOGIN ---------- */
+
+#login {
+	margin: 50px auto;
+	width: 400px;
+	    height: 65.5%;
+
+}
+
+#login h2 {
+	background-color: #f95252;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px 26px;
+}
+
+#login h2 span[class*="fontawesome-"] {
+	margin-right: 14px;
+}
+
+#login fieldset {
+	background-color: #fff;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
+}
+
+#login fieldset p {
+	color: #777;
+	margin-bottom: 14px;
+}
+
+#login fieldset p:last-child {
+	margin-bottom: 0;
+}
+
+#login fieldset input {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#login fieldset input[type="text"], #login fieldset input[type="password"] {
+	background-color: #eee;
+	color: #777;
+	padding: 4px 10px;
+	width: 328px;
+}
+
+#login fieldset input[type="submit"] {
+	background-color: #33cc77;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 100px;
+}
+
+#login fieldset input[type="submit"]:hover {
+	background-color: #28ad63;
+}
+
+.clean-gray{
+border:solid 1px #F54B4BCC;
+background:#F54B4BCC;
+color:#fff;
+padding:4px;
+text-align:center;
+}
+/*-------------------------------------------------*/
+
+#registro {
+	margin: 50px auto;
+	width: 80%;
+}
+
+#registro h2 {
+	background-color: #f95252;
+	-webkit-border-radius: 20px 20px 0 0;
+	-moz-border-radius: 20px 20px 0 0;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px 26px;
+}
+
+#registro h2 span[class*="fontawesome-"] {
+	margin-right: 14px;
+}
+
+#registro fieldset {
+	background-color: #fff;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
+}
+
+#registro fieldset p {
+	color: #ab2020;
+	margin-bottom: 14px;
+}
+
+#registro fieldset p:last-child {
+	margin-bottom: 0;
+}
+
+#registro fieldset input {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#registro fieldset input[type="text"], #registro fieldset input[type="password"] {
+	background-color: #eee;
+	color: #777;
+	padding: 4px 10px;
+	width: 328px;
+}
+
+#registro fieldset input[type="submit"] {
+	background-color: #33cc77;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 100px;
+}
+
+#registro fieldset input[type="submit"]:hover {
+	background-color: #28ad63;
+}
+.datos{
+	font-weight: bold;
+	font-stretch:    
+}

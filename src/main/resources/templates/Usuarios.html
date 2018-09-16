@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+			<link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
+			<link rel="stylesheet"  type="text/css" href="css/style.css">
+			<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+		    
+</head>
+<body>
+<!-- header -->
+	<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+			
+		
+	
+	<!-- header -->
+		<section class="contenedor">
+
+			<!--banner-->
+			
+			
+			<header class="menu">
+			
+			
+				<!--menu-->
+				<section class="menulogo">
+					<img id="logo" src="img/logo.png">
+				</section>
+				
+										<nav>
+						<ul class="menus">
+							<li class="men"><a href="/">Inicio</a>
+							</li>
+							<li class="men"><a href="#">Nosotros</a>
+								<ul class="sub-menu">
+									<li><a href="#">Vision</a></li>
+									<li><a href="#">Mision</a></li>
+									<li><a href="#">Ubicacion</a></li>
+								</ul>
+							</li>
+							<li class="men"><a href="#">Habitaciones</a>
+							  <ul class="sub-menu">
+								<li><a href="#">Familiares</a></li>
+								<li><a href="#">Dobles</a></li>
+								<li><a href="#">Matrimoniales</a></li>
+								<li><a href="#">Suite</a></li>
+							  </ul>
+							</li>
+							
+							</li>
+							<li class="men"><a href="#">Contactos</a>
+							</li>
+						  </ul>
+		
+					<ul class="navbar-right menuderecho">
+			        
+			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
+			         			<ul class="sub-menu">
+			         				<li><a href="login">Login</a></li>
+									<li><a href="registro">Registrarse</a></li>
+			                    </ul>
+			      			</li>
+						</ul>
+								
+					</nav>			
+
+					
+
+			
+			</header>
+			
+			<div class="container">
+				<table class="table">
+			 <thead>
+			  <tr>
+			     <th scope="col">Dui</th>
+			     <th scope="col">Nombre</th>
+			     <th scope="col">Apellido</th>
+			     <th scope="col">Usuario</th>
+			     <th scope="col">Contraseña</th>
+			     <th scope="col">Correo</th>
+			     <th scope="col">Edad</th>
+			     <th scope="col">Telefono</th>
+			     <th scope="col">Direccion</th>
+			     <th scope="col">Ciudad</th>
+			     <th scope="col">Tipo</th>
+			     <th scope="col">Estado</th>
+			  </tr>
+			 </thead>
+			 <tbody>
+			 
+			  <tr th:each="usuarios: ${usuarios}">     
+			     <td th:text="${Detalle_Usuario.Dui}"/>
+			     <td th:text="${usuario.Nombre}" />
+			     <td th:text="${usuario.Apellido}" />
+			     <td th:text="${usuario.Usuario}" />
+			     <td th:text="${usuario.Contrasena}" />
+			     <td th:text="${usuario.Correo}" />
+			     <td th:text="${usuario.Edad}" />
+			     <td th:text="${usuario.Telefono}" />
+			     <td th:text="${usuario.Direccion}" />
+			     <td th:text="${usuario.Ciudad}" />
+
+			     <td> <a th:href="@{/registro/} + ${usuario.id}" th:text="'Editar'" 
+			             class="btn btn-primary btn-xs" ></a></td>
+			     <td> <a th:href="@{/eliminar/} + ${usuario.id}" th:text="'Eliminar'" 
+			             class="btn btn-danger btn-xs" 
+			             onclick="return confirm('Estas seguro?')" ></a></td>
+			  </tr>
+			 </tbody>
+			</table>
+			</div>
+			
+			<a th:href="@{/registro}" class="btn btn-primary">Crear cliente</a>
+			<a th:href="@{/}" class="btn btn-secondary">Regresar</a>
+					
+		<footer>
+
+				<section class="pie">
+					<b>Todos los Derechos Resevados, COPYRIGHT 2018<br></b>
+				</section>
+		
+		
+		</footer>
+		
+	
+</body>
+</html>

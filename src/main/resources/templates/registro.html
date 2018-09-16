@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<title>OLYMPIA HOTEL</title>
+			<!--link de estilo local-->
+			<link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
+			<link rel="stylesheet"  type="text/css" href="css/style.css">
+		
+			<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+		    
+			<!-- Custom fonts for this template -->
+			<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+	
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</head>
+	<body>
+	<!-- header -->
+	<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+			
+	
+	<!-- header -->
+		<section class="contenedor">
+
+			<!--banner-->
+			
+			
+			<header class="menu">
+			
+			
+				<!--menu-->
+				<section class="menulogo">
+					<img id="logo" src="img/logo.png">
+				</section>
+				
+										<nav>
+						<ul class="menus">
+							<li class="men"><a href="/">Inicio</a>
+							</li>
+							<li class="men"><a href="#">Nosotros</a>
+								<ul class="sub-menu">
+									<li><a href="#">Vision</a></li>
+									<li><a href="#">Mision</a></li>
+									<li><a href="#">Ubicacion</a></li>
+								</ul>
+							</li>
+							<li class="men"><a href="#">Habitaciones</a>
+							  <ul class="sub-menu">
+								<li><a href="#">Familiares</a></li>
+								<li><a href="#">Dobles</a></li>
+								<li><a href="#">Matrimoniales</a></li>
+								<li><a href="#">Suite</a></li>
+							  </ul>
+							</li>
+							
+							</li>
+							<li class="men"><a href="#">Contactos</a>
+							</li>
+						  </ul>
+		
+					<ul class="navbar-right menuderecho">
+			        
+			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
+			         			<ul class="sub-menu">
+			         				<li><a href="login">Login</a></li>
+									<li><a href="registro">Registrarse</a></li>
+			                    </ul>
+			      			</li>
+						</ul>
+								
+					</nav>			
+
+					
+					
+
+			
+			</header>
+			
+		</section>
+		
+		
+	
+		<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+		<div id="registro">
+
+		<h2><span class="fontawesome-lock"></span>REGISTRO</h2>
+
+		<form action="registro"  method="POST" >
+
+			<fieldset>
+					<div class="clean-gray" th:text="${duiError}" ></div>
+					<br>
+				<div class="row">
+					  <div class="col-md-6">
+					  	<p><label class="datos text-center col-lg-8">Datos del Usuario</label></p>
+						<p><label for="dui">Numero de Dui</label></p>
+						<p><input  name="dui" type="text" id="dui"  placeholder="Ingrese el Dui" maxlength="10"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="nombre">Nombres</label></p>
+						<p><input name="nombre" type="text" id="Nombre"  placeholder="Ingrese su Nombre"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="apellido">Apellidos</label></p>
+						<p><input name="apellido" type="text" id="Apellido"  placeholder="Ingrese su Apellido"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="edad">Edad</label></p>
+						<p><input name="edad" type="number" id="Edad"  placeholder="Ingrese su Edad"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="telefono">Telefono</label></p>
+						<p><input name="telefono" type="text" id="Telefono"  placeholder="Ingrese su Telefono" maxlength="8"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="direccion">Direccion</label></p>
+						<p><input name="direccion" type="text" id="Direccion"  placeholder="Ingrese su Direccion"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+					</div>
+					<div class="col-md-6">
+						<p><label for="ciudad">Ciudad</label></p>
+						<p><input name="ciudad" type="text" id="Ciudad"  placeholder="Ingrese su Ciudad"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<br>
+						<p><label class="datos text-center col-lg-8">Datos de Acesso</label></p>
+						<p><label for="user">Nombre de Usuario</label></p>
+						<p><input name="usuario" type="text" id="user"  placeholder="Ingrese su Usuario"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="pass">Contraseña</label></p>
+						<p><input name="contrasena" type="password" id="contrasena"  placeholder="Ingrese su Contraseña"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="email">Correo Electronico</label></p>
+						<p><input name="correo" type="email" id="correo"  placeholder="Ingrese su Correo"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="direccion">Seleccione El Tipo de Usuario</label></p>
+						<select name="tipo">
+							<option value="1" >Usuario</option>
+							<option value="2">Empleado</option>
+						</select>
+						<input name="estado" type="hidden" id="estado" value="1">
+					</div>
+				</div>
+				<br>
+				<p><input type="submit" value="Registrar"></p>
+			<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+			</fieldset>
+
+		</form>
+
+	</div> <!-- end register -->
+					
+					
+					
+				</section>
+				<section class="pie">
+					<b>Todos los Derechos Resevados, COPYRIGHT 2018<br></b>
+				</section>
+		
+		
+		</footer>
+		
+	
+	</body>
+</html>
+
+
