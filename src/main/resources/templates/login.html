@@ -19,6 +19,8 @@
 	<!-- header -->
 	<div class="alert alert-success" th:if="${success != null}"
 			th:text="${success}"></div>
+			<div class="alert alert-danger" th:if="${error != null}"
+			th:text="${error}"></div>
 			
 		
 	
@@ -42,26 +44,29 @@
 							</li>
 							<li class="men"><a href="#">Nosotros</a>
 								<ul class="sub-menu">
-									<li><a href="#">Vision</a></li>
-									<li><a href="#">Mision</a></li>
-									<li><a href="#">Ubicacion</a></li>
+									<li><a href="/vision">Vision</a></li>
+									<li><a href="/mision">Mision</a></li>
+									<li><a href="/ubicacion">Ubicacion</a></li>
 								</ul>
 							</li>
 							<li class="men"><a href="#">Habitaciones</a>
 							  <ul class="sub-menu">
-								<li><a href="#">Familiares</a></li>
-								<li><a href="#">Dobles</a></li>
-								<li><a href="#">Matrimoniales</a></li>
-								<li><a href="#">Suite</a></li>
+								<li><a href="/tipo/2">Dobles</a></li>
+								<li><a href="/tipo/21">Matrimonial</a></li>
+								<li><a href="/tipo/22">Suite</a></li>
 							  </ul>
 							</li>
 							
 							</li>
-							<li class="men"><a href="#">Contactos</a>
+							<li class="men"><a href="/contacto">Contactos</a>
 							</li>
 						  </ul>
 		
-					<ul class="navbar-right menuderecho">
+					<div th:if="${session.usuariologeado}" >
+						 <li class="men"><a href="cerrarsession">Cerrar Session</b></a></li>
+						  </div>
+						<div th:if="${session.usuariologeado == null}" >
+						<ul class="navbar-right menuderecho">
 			        
 			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
 			         			<ul class="sub-menu">
@@ -70,6 +75,7 @@
 			                    </ul>
 			      			</li>
 						</ul>
+						</div>
 								
 					</nav>			
 

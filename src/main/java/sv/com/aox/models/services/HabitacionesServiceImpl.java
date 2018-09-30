@@ -41,4 +41,15 @@ public class HabitacionesServiceImpl implements IHabitacionesService{
 		habitacionesDao.deleteById(id);
 		
 	}
+	@Override
+	@Transactional (readOnly=true)
+	public List<Habitaciones> selecthabitacion() {
+			return (List<Habitaciones>) habitacionesDao.selecthabitacion();
+	}
+	
+	@Override
+	@Transactional (readOnly=true)
+	public List<Habitaciones> selecthabitaciontipo(Long id) {
+			return (List<Habitaciones>) habitacionesDao.selecthabitaciontipo(id);
+	}
 }

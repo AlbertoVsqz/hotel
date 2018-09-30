@@ -126,12 +126,11 @@
 								<li><a href="/tipo/2">Dobles</a></li>
 								<li><a href="/tipo/21">Matrimonial</a></li>
 								<li><a href="/tipo/22">Suite</a></li>
-								
 							  </ul>
 							</li>
 							
 							</li>
-							<li class="men"><a href="/contacto">Contactos</a>
+							<li class="men"><a href="#">Contactos</a>
 							</li>
 						  </ul>
 						  
@@ -141,7 +140,7 @@
 						<div th:if="${session.usuariologeado == null}" >
 						<ul class="navbar-right menuderecho">
 			        
-			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
+			      			<li class="men"><a href="/contacto">Login</b> <span class="caret"></span></a>
 			         			<ul class="sub-menu">
 			         				<li><a href="login">Login</a></li>
 									<li><a href="registro">Registrarse</a></li>
@@ -163,109 +162,60 @@
 			
 			<br>
 				<section class="tbcontenido1">
-
-					<section class="page-section cta">
-						  <div class="container">
-							<div class="row">
-							  <div class="col-xl-9 mx-auto">
-								<div class="cta-inner text-center rounded">
-								  <h2 class="section-heading mb-4">
-									<span class="section-heading-upper">BIENVENIDO A</span>
-									<span class="section-heading-lower">OLYMPIA HOTEL</span>
-								  </h2>
-								  <p class="mb-0">
-												Olympia Hotel es un novedoso concepto de alojamiento en el centro de San Miguel.
-												Un hotel de 3 estrellas, situado en un edificio modernista que se ha rehabilitado 
-												completamente. Está ubicado en una calle peatonal, es muy tranquilo y sus
-												habitaciones son de diseño moderno, muy luminosas, y ofrecen todas las comodidades 
-												de un hotel de 3 estrellas en el centro de Sa Miguel.
-								  </p>
-								</div>
-							  </div>
-							</div>
-						  </div>
-					</section>
+				<section class="page-section cta">
+						<fieldset><div class="row">
+					  <div class="col-md-3">
+									<div class="row">
+										<label for="name">Tu nombre:</label>
+										<input id="name" placeholder="Escribe tu nombre" type="text" value="" size="30" /><br />
+									</div>
+									<div class="row">
+										<label for="email">Tu Correo:</label>
+										<input id="email" placeholder="Escribe tu Correo"type="text" value="" size="30" /><br />
+									</div>
+									<div class="row">
+										<label for="email">Tu telefono:</label>
+										<input id="email" placeholder="Escribe tu telefono"type="text" value="" size="30" /><br />
+									</div>
+									<div class="row">
+										<label for="message">Tu mensaje:</label>
+										<textarea id="message" placeholder="Escribe tu mensaje" rows="7" cols="30"></textarea><br />
+									</div>
+									<input id="submit" type="submit" value="Enviar" />
+								</form>	
 						
-					
+						</div>
+						  <div class="col-md-9">
+									<h1>CONTACTENOS SERA UN GUSTO ATENDERLE</h1>
+									<p>Porque sabemos de la importancia que tiene su criterio, permítanos ofrecerle este canal para que nos exprese 
+									sus comentarios y sugerencias acerca de las experiencias vividas con nosotros. Siéntase además en la libertad de 
+									consultarnos acerca de los servicios que ponemos a sus órdenes.
+									<br>
+									<br>
+										Con la calidad de servicio que nos caracteriza, somos una empresa cuyo objetivo principal es la satisfacción 
+										plena de usted nuestro cliente, en toda la extensión de la palabra, por ello hemos adecuado cada espacio de
+										nuestras instalaciones de manera que se sienta en casa, abrigándole con el calor humano que caracteriza a 
+										nuestro personal, además de la eficiencia y eficacia con la que le atendemos.
+									<br>
+									<br>
+										Por favor, considere que el tiempo de espera para dar respuesta a sus mensajes o correos electrónicos dependerá 
+										del horario en que se envié y reciba en nuestras oficinas, por lo que pedimos comprensión y paciencia mientras 
+										procedemos a responder la gestión que usted hace.
+									<br>
+									<br>
+									<ul>
+									<li>Barrio San Francisco # 460, San Miguel</li>
+									<li>2646-4212</li>
+									<li>infolimpia@gmail.com</li>
+									</ul>
+									</div>
+						</div>
+					</fieldset>
+					</section>
 				</section>
-			<br>
-			<hr></hr>
-			<br>
+			
 		</section>
-				<!-- <table class="table">
-					<thead>
-						<tr>
-						<th scope="col">id</th>
-						<th scope="col">Nombre</th>
-						<th scope="col">Apellido</th>
-						<th scope="col">Ciudad</th>
-						
-						</tr>
-					</thead>
-				<!--tfoot>
-					<tr>
-					<td>Sum</td>
-					<td>$180</td>
-					</tr>
-				</tfoot-->
-				<!-- <tbody>
-					<tr th:each="habitaciones: ${habitaciones}">
-					<td th:text="${habitaciones.Id}"/>
-					<td th:text="${habitaciones.Numero}" />
-					<td th:text="${habitaciones.Id_Tipo}" />
-					<td th:text="${habitaciones.Precio}" />
-					
-					<td> <a th:href="@{/form/} + ${habitaciones.Id}" th:text="'Editar'" class="btn
-					btn-primary btn-xs" ></a></td>
-					<td> <a th:href="@{/eliminar/} + ${habitaciones.Id}" th:text="'Eliminar'" class="btn
-					btn-danger btn-xs" onclick="return confirm('Estas seguro?')" ></a></td>
-					</tr>
-				</tbody>
-			</table>-->
-			
-			<section Class="tituloHabitacion text-center" >
-						<h1 >NUESTRAS HABITACIONES</h1>
-					</section>
-				<br>
-		<div class="section boxes" >
-                <div class="center">
 	
-                    <div class="item " th:each="habitaciones: ${habitaciones}">
-   
-                        <div class="item-container" >
-                            
-                                <div class="thumb">
-                                    <img src="img/img1.jpg" alt="" width="500" height="300">
-                                    <div class="featured">Caracteristicas</div>
-                                </div>
-                                
-                                     
-                                
-                                <div class="details">
-                                
-									<h5 th:each="tipo_habitacion: ${tipo}" th:if="${tipo_habitacion.Id == habitaciones.Id_Tipo}">
-									<p th:text="${tipo_habitacion.Tipo}"></p>
-								
-	
-                                
-                                Caracteristicas:<p th:text="${habitaciones.Caracteristicas}"></p>
-                                Precio Por Noche: $<p th:text="${habitaciones.Precio}"></p>
-                                </h5>
-                                  
-                                    <a th:href="@{/reserva/} + ${habitaciones.Id}" class="reserva"> Reservar</a>
-                                      
-                                
-           
-                            
-                        </div>
-                        </div>
-                    </div>
-
-
-			
-                </div>
-            </div>
-		
 		
 		
 		

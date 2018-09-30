@@ -1,6 +1,7 @@
 package sv.com.aox.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -49,10 +50,16 @@ public class LoginController {
 			
 			return "login";
 		}
-
-		return "index";
+		
+		session.setAttribute("usuariologeado", usuario2);
+		return "redirect:/";
 	}
 	
+	@RequestMapping(value="/cerrarsession")
+	public String destroySession(HttpSession session) {
+		session.removeAttribute("usuariologeado");
+		return "redirect:/";
+	}
 
 	
 	

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta charset="UTF-8">
 			<link rel="stylesheet"  type="text/css" href="css/bootstrap.css">
-			<link rel="stylesheet"  type="text/css" href="css/style.css">
+			
 			<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 			<script src="js/bootstrap.min.js"></script>
 		    
@@ -34,26 +35,29 @@
 							</li>
 							<li class="men"><a href="#">Nosotros</a>
 								<ul class="sub-menu">
-									<li><a href="#">Vision</a></li>
-									<li><a href="#">Mision</a></li>
-									<li><a href="#">Ubicacion</a></li>
+									<li><a href="/vision">Vision</a></li>
+									<li><a href="/mision">Mision</a></li>
+									<li><a href="/ubicacion">Ubicacion</a></li>
 								</ul>
 							</li>
 							<li class="men"><a href="#">Habitaciones</a>
 							  <ul class="sub-menu">
-								<li><a href="#">Familiares</a></li>
-								<li><a href="#">Dobles</a></li>
-								<li><a href="#">Matrimoniales</a></li>
-								<li><a href="#">Suite</a></li>
+								<li><a href="/tipo/2">Dobles</a></li>
+								<li><a href="/tipo/21">Matrimonial</a></li>
+								<li><a href="/tipo/22">Suite</a></li>
 							  </ul>
 							</li>
 							
 							</li>
-							<li class="men"><a href="#">Contactos</a>
+							<li class="men"><a href="/contacto">Contactos</a>
 							</li>
 						  </ul>
 		
-					<ul class="navbar-right menuderecho">
+					<div th:if="${session.usuariologeado}" >
+						 <li class="men"><a href="cerrarsession">Cerrar Session</b></a></li>
+						  </div>
+						<div th:if="${session.usuariologeado == null}" >
+						<ul class="navbar-right menuderecho">
 			        
 			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
 			         			<ul class="sub-menu">
@@ -62,6 +66,7 @@
 			                    </ul>
 			      			</li>
 						</ul>
+						</div>
 								
 					</nav>			
 
@@ -70,7 +75,12 @@
 			
 			</header>
 			
-			<div class="container">
+			<section Class="tituloHabitacion text-center" >
+						<h1 >USUARIOS REGISTRADOS</h1>
+					</section>
+				<br>
+			
+			<div class="container section boxes" >
 				<table class="table">
 			 <thead>
 			  <tr>
@@ -78,7 +88,7 @@
 			     <th scope="col">Nombre</th>
 			     <th scope="col">Apellido</th>
 			     <th scope="col">Usuario</th>
-			     <th scope="col">Contraseña</th>
+			     <th scope="col">ContraseÃ±a</th>
 			     <th scope="col">Correo</th>
 			     <th scope="col">Edad</th>
 			     <th scope="col">Telefono</th>
@@ -90,21 +100,21 @@
 			 </thead>
 			 <tbody>
 			 
-			  <tr th:each="usuarios: ${usuarios}">     
+			  <tr th:each="Detalle_Usuario: ${usuarios}">     
 			     <td th:text="${Detalle_Usuario.Dui}"/>
-			     <td th:text="${usuario.Nombre}" />
-			     <td th:text="${usuario.Apellido}" />
-			     <td th:text="${usuario.Usuario}" />
-			     <td th:text="${usuario.Contrasena}" />
-			     <td th:text="${usuario.Correo}" />
-			     <td th:text="${usuario.Edad}" />
-			     <td th:text="${usuario.Telefono}" />
-			     <td th:text="${usuario.Direccion}" />
-			     <td th:text="${usuario.Ciudad}" />
+			     <td th:text="${Detalle_Usuario.Nombre}" />
+			     <td th:text="${Detalle_Usuario.Apellido}" />
+			     <td th:text="${Detalle_Usuario.Usuario}" />
+			     <td th:text="${Detalle_Usuario.Contrasena}" />
+			     <td th:text="${Detalle_Usuario.Correo}" />
+			     <td th:text="${Detalle_Usuario.Edad}" />
+			     <td th:text="${Detalle_Usuario.Telefono}" />
+			     <td th:text="${Detalle_Usuario.Direccion}" />
+			     <td th:text="${Detalle_Usuario.Ciudad}" />
 
-			     <td> <a th:href="@{/registro/} + ${usuario.id}" th:text="'Editar'" 
+			     <td> <a th:href="@{/registro/} + ${Detalle_Usuario.Id}" th:text="'Editar'" 
 			             class="btn btn-primary btn-xs" ></a></td>
-			     <td> <a th:href="@{/eliminar/} + ${usuario.id}" th:text="'Eliminar'" 
+			     <td> <a th:href="@{/eliminar/} + ${Detalle_Usuario.Id}" th:text="'Eliminar'" 
 			             class="btn btn-danger btn-xs" 
 			             onclick="return confirm('Estas seguro?')" ></a></td>
 			  </tr>

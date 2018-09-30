@@ -28,14 +28,12 @@ public class Reservaciones implements Serializable{
 	@Column(name="Id_Usuario")
 	private Long Id_Usuario;
 	
-	private String N_Habitacion;
+	private Integer N_Habitacion;
 	
 	@Column(name="Fecha_Llegada")
-	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date Fecha_Llegada;
 	
 	@Column(name="Fecha_Salida")
-	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date Fecha_Salida;
 	
 	@Column(name="Estado")
@@ -58,11 +56,11 @@ public class Reservaciones implements Serializable{
 		Id_Usuario = id_Usuario;
 	}
 
-	public String getN_Habitacion() {
+	public Integer getN_Habitacion() {
 		return N_Habitacion;
 	}
 
-	public void setN_Habitacion(String n_Habitacion) {
+	public void setN_Habitacion(Integer n_Habitacion) {
 		N_Habitacion = n_Habitacion;
 	}
 

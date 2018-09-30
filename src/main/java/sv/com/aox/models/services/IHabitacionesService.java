@@ -14,4 +14,8 @@ public interface IHabitacionesService {
 	
 	public void delete(Long id);
 	
+	public List<Habitaciones> selecthabitacion();
+	
+	public List<Habitaciones> selecthabitaciontipo(Long id);
+	
 }

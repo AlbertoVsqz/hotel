@@ -1,0 +1,167 @@
+<html>
+
+	<head>
+		<title>RESERVA</title>
+			<!--link de estilo local-->
+			<link rel="stylesheet"  type="text/css" href="/css/bootstrap.css">
+			<link rel="stylesheet"  type="text/css" href="/css/style.css">
+			<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+		    
+			<!-- Custom fonts for this template -->
+			<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+	
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		
+	</head>
+	<body>
+	
+	<!-- header -->
+	<div class="alert alert-success" th:if="${success != null}"
+			th:text="${success}"></div>
+	<div class="alert alert-danger" th:if="${error != null}"
+			th:text="${error}"></div>
+			
+		
+	
+	<!-- header -->
+		<section class="contenedor">
+
+			<!--banner-->
+			
+			
+			<header class="menu">
+			
+			
+				<!--menu-->
+				<section class="menulogo">
+					<img id="logo" src="/img/logo.png">
+				</section>
+				
+										<nav>
+						<ul class="menus">
+							<li class="men"><a href="/">Inicio</a>
+							</li>
+							<li class="men"><a href="#">Nosotros</a>
+								<ul class="sub-menu">
+									<li><a href="/vision">Vision</a></li>
+									<li><a href="/mision">Mision</a></li>
+									<li><a href="/ubicacion">Ubicacion</a></li>
+								</ul>
+							</li>
+							<li class="men"><a href="#">Habitaciones</a>
+							  <ul class="sub-menu">
+								<li><a href="/tipo/2">Dobles</a></li>
+								<li><a href="/tipo/21">Matrimonial</a></li>
+								<li><a href="/tipo/22">Suite</a></li>
+							  </ul>
+							</li>
+							
+							</li>
+							<li class="men"><a href="/contacto">Contactos</a>
+							</li>
+						  </ul>
+		
+					<div th:if="${session.usuariologeado}" >
+						 <li class="men"><a href="/cerrarsession">Cerrar Session</b></a></li>
+						  </div>
+						<div th:if="${session.usuariologeado == null}" >
+						<ul class="navbar-right menuderecho">
+			        
+			      			<li class="men"><a href="#">Login</b> <span class="caret"></span></a>
+			         			<ul class="sub-menu">
+			         				<li><a href="login">Login</a></li>
+									<li><a href="registro">Registrarse</a></li>
+			                    </ul>
+			      			</li>
+						</ul>
+						</div>
+								
+					</nav>			
+
+					
+
+			
+			</header>
+			
+		</section>
+		
+		<div class="container">
+	 				<section Class="tituloHabitacion text-center" >
+						<h1 >RESERVA DE HABITACION</h1>
+					</section>
+				<br>
+		<form action="ponreserva"  method="POST" >
+                <div class="center">
+	
+                    <div class="row">
+   
+                        <div class="col-md-6" th:each="habitaciones: ${habitaciones}">
+                            
+                                <div class="thumb">
+                                    <img src="/img/img1.jpg" alt="" width="400" height="250">
+                                </div>
+                                
+                                <div class="details" th:each="tipo_habitacion: ${tipos}">
+                                	<h5 >
+                                	<p th:text="${tipo_habitacion.Tipo}"></p>
+									  Caracteristicas:<p th:text="${habitaciones.Caracteristicas}"></p>
+                                	  Precio Por Noche : $<p th:text="${habitaciones.Precio}"></p>
+                                </h5>
+                                    
+                                </div>
+                                <input name="N_Habitacion" type="hidden" id="N_Habitacion" th:value="${habitaciones.numero}">
+                                <input name="estado" type="hidden" id="estado" value="1">
+                                <input name="Id_Usuario" type="hidden" id="Id_Usuario" th:each="login: ${session.usuariologeado}" th:value="${login.Id}">
+                                <div th:if="${session.usuariologeado == null}" >
+									<input name="Id_Usuario" type="hidden" id="Id_Usuario" value="">
+								</div>
+  
+                    
+                        </div>
+                        
+                        <div class="col-md-6">
+                        	<h3>!Coloque las Fechas Correspondiente para la Reserva¡</h3>
+                        <br>
+                        <p>FECHA DE LLEGADA</p>
+                        <input name="Fecha_Llegada" id="Fecha_Llegada" type="date" required>
+                        <br>
+                        <br>
+                        <p>FECHA DE SALIDA</p>
+                        <input name="Fecha_Salida" id="Fecha_Salida" type="date" required>
+                        <br>
+                        <br>
+                        <p><input type="submit" value="Confirmar La Reservacion"></p>
+                        
+                        </div>
+                        
+                    </div>
+					
+		<form:errors path="*" class="errores" />
+		<form:errors path="*" cssClass="errores"/>
+			
+                </div>
+            </form>
+	 		
+		</div>
+			
+			
+<footer>
+
+				<section class="pie">
+					<b>Todos los Derechos Resevados, COPYRIGHT 2018<br></b>
+				</section>
+		
+		
+		</footer>
+		
+	
+	</body>
+</html>
+
+
+	
+
+
