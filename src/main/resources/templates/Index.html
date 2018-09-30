@@ -231,33 +231,19 @@
                 <div class="center">
 	
                     <div class="item " th:each="habitaciones: ${habitaciones}">
-   
                         <div class="item-container" >
-                            
                                 <div class="thumb">
                                     <img src="img/img1.jpg" alt="" width="500" height="300">
                                     <div class="featured">Caracteristicas</div>
                                 </div>
-                                
-                                     
-                                
                                 <div class="details">
-                                
-									<h5 th:each="tipo_habitacion: ${tipo}" th:if="${tipo_habitacion.Id == habitaciones.Id_Tipo}">
-									<p th:text="${tipo_habitacion.Tipo}"></p>
-								
-	
-                                
-                                Caracteristicas:<p th:text="${habitaciones.Caracteristicas}"></p>
-                                Precio Por Noche: $<p th:text="${habitaciones.Precio}"></p>
-                                </h5>
-                                  
+                                	<h5 th:each="tipo_habitacion: ${tipo}" th:if="${tipo_habitacion.Id == habitaciones.Id_Tipo}">
+										<p th:text="${tipo_habitacion.Tipo}"></p>
+										Caracteristicas:<p th:text="${habitaciones.Caracteristicas}"></p>
+                                		Precio Por Noche: $<p th:text="${habitaciones.Precio}"></p>
+                                	</h5>
                                     <a th:href="@{/reserva/} + ${habitaciones.Id}" class="reserva"> Reservar</a>
-                                      
-                                
-           
-                            
-                        </div>
+                         		</div>
                         </div>
                     </div>
 

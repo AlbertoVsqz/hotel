@@ -1,0 +1,164 @@
+<html>
+<head>
+  <title>Administracion</title>
+  <html xmlns:th="http://www.thymeleaf.org">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" type="text/css" th:href="@{/bower_components/bootstrap/dist/css/bootstrap.min.css}">
+ <link rel="stylesheet" type="text/css" th:href="@{/bower_components/font-awesome/css/font-awesome.min.css}">
+ <link rel="stylesheet" type="text/css" th:href="@{/dist/css/AdminLTE.min.css}">
+ <link rel="stylesheet" type="text/css" th:href="@{/dist/css/skins/skin-blue.min.css}">
+ <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>O</b>LP</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>OLIMPIA</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Administrador</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  HOTEL OLYMPIA- WEB ADMINISTRACION
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Cerrar Sesion</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Administrador</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>HABITACIONES</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/habitaciones">HABITACIONES</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>USUARIOS</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/usuarios">USUARIOS</a></li>
+            <li><a href="/admin/estadousuarios">ESTADO DE USUARIO</a></li>
+            <li><a href="#/admin/tipousuarios">TIPO DE USUARIO</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+    <div class="box">
+    <center>
+   <br/>
+   <div class="row">
+          <div class="col-lg-6">
+            <img class="rounded-circle" th:src="@{/dist/img/habitaciones.jpg}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Habitaciones</h2>
+            <p>Gestione los recursos de su hotel en un solo lugar</p>
+            <p><a class="btn btn-secondary" th:href="@{/admin/habitaciones}" role="button">Ver</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-6">
+            <img class="rounded-circle" th:src="@{/dist/img/usuario.png}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Productos</h2>
+            <p>C>Gestione sus clientes para todas sus platafomas y en solo lugar</p>
+            <p><a class="btn btn-secondary" th:href="@{/admin/usuarios}" role="button">Ver</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div>
+   </center>
+    </div>
+   
+   
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+    </section>
+    
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+<script th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+<script th:src="@{/dist/js/adminlte.min.js}"></script>
+</body>
+</html>

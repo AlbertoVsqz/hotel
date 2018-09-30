@@ -21,7 +21,6 @@ import sv.com.aox.models.services.TipoHabitacionService;
 
 @Controller
 @SessionAttributes("habitaciones")
-
 public class HabitacionesController {
 
 	@Autowired	
